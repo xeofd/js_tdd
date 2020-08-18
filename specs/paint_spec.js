@@ -15,7 +15,7 @@ describe("PaintCan:", function () {
     // Tests
 
     // Test 1:
-    it("should have a number of liters", function(){
+    it("- should have a number of liters", function(){
         // Act
         const actual = paintCan.liters;
 
@@ -24,7 +24,7 @@ describe("PaintCan:", function () {
     });
     
     // Test 2:
-    it("should be able to check if empty", function(){
+    it("- should be able to check if empty", function(){
         // Act
         const actual = paintCan.checkIfEmpty();
 
@@ -33,7 +33,7 @@ describe("PaintCan:", function () {
     });
 
     // test 3
-    it("should be able to empty itself", function() {
+    it("- should be able to empty itself", function() {
         // Act
         paintCan.emptyPaint();
         const actual = paintCan.checkIfEmpty();
