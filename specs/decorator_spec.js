@@ -1,14 +1,19 @@
 // Imports
 const assert = require('assert');
 const Decorator = require('../decorator');
+const PaintCan = require('../paint_can');
 
 // Describes
 describe("Decorator:", function(){
     
     // Set up
     let decorator;
+    let paintCan1;
+    let paintCan2;
     beforeEach(function(){
         decorator = new Decorator();
+        paintCan1 = new PaintCan(5);
+        paintCan2 = new PaintCan(10);
     });
 
     // Tests
@@ -23,13 +28,25 @@ describe("Decorator:", function(){
     })
     
     // Test 2:
-    xit("- should be able to add a can of paint to stock", function(){
-        
+    it("- should be able to add a can of paint to stock", function(){
+        // Act
+        decorator.addPaint(paintCan1);
+        const actual = decorator.stock.length
+    
+        // Assert
+        assert.strictEqual(actual, 1);
     })
     
     // Test 3:
-    xit("- should be able to calculate total liters of paint", function(){
-        
+    it("- should be able to calculate total liters of paint", function(){
+        // Arrange
+        decorator.addPaint(paintCan1);
+        decorator.addPaint(paintCan2);
+
+        // Act
+        const actual = decorator.checkLiters();
+        // Assert
+        assert.strictEqual(actual, 15);
     });
 
     // Test 4:
