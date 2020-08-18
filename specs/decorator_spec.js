@@ -78,4 +78,18 @@ describe("Decorator:", function(){
         // Assert
         assert.strictEqual(actual, true);
     });
+
+    // Test 6:
+    it("should be able to remove paint when painting", function(){
+        // Arrange
+        decorator.addPaint(paintCan1);
+        decorator.addPaint(paintCan2);
+
+        // Act
+        decorator.paintRoom(room1);
+        const actual = decorator.stock.length
+
+        // Assert
+        assert.strictEqual(actual, 1);
+    })
 })

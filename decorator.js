@@ -30,7 +30,8 @@ Decorator.prototype.canPaintRoom = function(room){
 
 Decorator.prototype.paintRoom = function(room){
     if (this.canPaintRoom(room)){
-        room.getPainted()
+        room.getPainted();
+        this.stock.pop();
     }
 }
 
