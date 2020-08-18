@@ -1,6 +1,6 @@
 // Imports
 const assert = require('assert');
-const PaintCan = require('../paint_can.js');
+const PaintCan = require('../paint_can');
 
 // describes
 

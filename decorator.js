@@ -18,5 +18,21 @@ Decorator.prototype.checkLiters = function(){
     return total;
 }
 
+Decorator.prototype.canPaintRoom = function(room){
+    const total = this.checkLiters();
+
+    if (room.area <= total){
+        return true;
+    } else{
+        return false;
+    }
+}
+
+Decorator.prototype.paintRoom = function(room){
+    if (this.canPaintRoom(room)){
+        room.getPainted()
+    }
+}
+
 // Export
 module.exports = Decorator;

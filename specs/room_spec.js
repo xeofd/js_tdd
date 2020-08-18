@@ -35,7 +35,7 @@ describe("Room:", function(){
     // Test 3:
     it("should be able to be painted", function(){
         // Act
-        room.paintRoom();
+        room.getPainted();
         const actual = room.painted
 
         // Assert

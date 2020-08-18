@@ -2,6 +2,7 @@
 const assert = require('assert');
 const Decorator = require('../decorator');
 const PaintCan = require('../paint_can');
+const Room = require('../room');
 
 // Describes
 describe("Decorator:", function(){
@@ -10,10 +11,14 @@ describe("Decorator:", function(){
     let decorator;
     let paintCan1;
     let paintCan2;
+    let room1;
+    let room2;
     beforeEach(function(){
         decorator = new Decorator();
         paintCan1 = new PaintCan(5);
         paintCan2 = new PaintCan(10);
+        room1 = new Room(6);
+        room2 = new Room(5);
     });
 
     // Tests
@@ -50,11 +55,27 @@ describe("Decorator:", function(){
     });
 
     // Test 4:
-    xit("should be able to calculate whether there is enough paint to paint room", function(){
-
+    it("should be able to calculate whether there is enough paint to paint room", function(){
+        // Arrange
+        decorator.addPaint(paintCan1);
+        
+        // Act
+        const actual = decorator.canPaintRoom(room2);
+        
+        // Assert
+        assert.strictEqual(actual, true);
     });
 
     // Test 5:
-    xit("should be able to paint room if enough paint", function(){
+    it("should be able to paint room if enough paint", function(){
+        // Arrange
+        decorator.addPaint(paintCan1);
+
+        // Act
+        decorator.paintRoom(room2);
+        const actual = room2.painted;
+
+        // Assert
+        assert.strictEqual(actual, true);
     });
 })

@@ -5,7 +5,7 @@ const Room = function (area) {
 };
 
 // Functions
-Room.prototype.paintRoom = function () {
+Room.prototype.getPainted = function () {
     this.painted = true;
 };
 
